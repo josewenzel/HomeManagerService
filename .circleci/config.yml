@@ -4,6 +4,10 @@ orbs:
   gradle: circleci/gradle@3.0.0
 
 workflows:
-  build:
+  build_test:
     jobs:
       - gradle/test
+      - gradle/run:
+          requires:
+            - gradle/test
+          command: ktlintCheck
