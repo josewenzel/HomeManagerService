@@ -2,7 +2,7 @@ package doubles
 
 import domain.model.Friend
 import ports.repositories.FriendRepository
-import java.util.*
+import java.util.LinkedList
 
 class FakeFriendRepository : FriendRepository {
     private val store = LinkedList<Friend>()
