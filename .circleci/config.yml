@@ -6,8 +6,6 @@ orbs:
 workflows:
   build_test:
     jobs:
-      - gradle/test
       - gradle/run:
-          requires:
-            - gradle/test
           command: ktlintCheck
+      - gradle/test
