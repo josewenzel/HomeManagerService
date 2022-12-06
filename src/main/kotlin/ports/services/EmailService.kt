@@ -1,3 +1,7 @@
 package ports.services
 
-interface EmailService
+import domain.model.BirthdayReminder
+
+interface EmailService {
+    fun send(email: BirthdayReminder)
+}
