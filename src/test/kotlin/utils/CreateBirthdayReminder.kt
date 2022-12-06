@@ -11,3 +11,10 @@ fun createBirthdayReminder(): BirthdayReminder {
     val recipient = "dummy@example.com"
     return BirthdayReminder(friend, recipient)
 }
+
+fun createBirthdayReminderFor(day: Int, month: Month): BirthdayReminder {
+    val birthday = LocalDate.of(day, month, 17)
+    val friend = Friend("Michael Jordan", birthday)
+    val recipient = "dummy@example.com"
+    return BirthdayReminder(friend, recipient)
+}

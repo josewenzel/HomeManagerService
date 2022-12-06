@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test
 import ports.repositories.BirthdayReminderRepository
 import ports.services.EmailService
 import utils.createBirthdayReminder
+import utils.createBirthdayReminderFor
 import java.time.LocalDate
 import java.time.Month
 
@@ -31,8 +32,8 @@ class BirthdayReminderServiceTest {
 
     @Test
     fun `a reminder is sent if is someone's birthday`() {
-        val reminder = createBirthdayReminder()
         val date = LocalDate.of(2022, Month.SEPTEMBER, 17)
+        val reminder = createBirthdayReminderFor(date.dayOfMonth, date.month)
         every { birthdayReminderRepository.getByBirthday(date) } returns listOf(reminder)
         every { dateService.today() } returns date
 
