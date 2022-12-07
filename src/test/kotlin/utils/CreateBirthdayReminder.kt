@@ -8,13 +8,13 @@ import java.time.Month
 fun createBirthdayReminder(): BirthdayReminder {
     val birthday = LocalDate.of(1993, Month.SEPTEMBER, 17)
     val friend = Friend("Michael Jordan", birthday)
-    val recipient = "dummy@example.com"
+    val recipient = listOf("dummy@example.com", "dummy2@example.com")
     return BirthdayReminder(friend, recipient)
 }
 
 fun createBirthdayReminderFor(day: Int, month: Month): BirthdayReminder {
     val birthday = LocalDate.of(day, month, 17)
     val friend = Friend("Michael Jordan", birthday)
-    val recipient = "dummy@example.com"
+    val recipient = listOf("dummy@example.com", "dummy2@example.com")
     return BirthdayReminder(friend, recipient)
 }
